@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layouts.color_game.ColorGameActivity">
+
+    <FrameLayout
+        android:id="@+id/red"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF0000"
+        />
+    <FrameLayout
+        android:id="@+id/green"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:background="#00FF00"
+        android:layout_gravity="bottom|end"
+        />
+
+    <FrameLayout
+        android:id="@+id/white"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:background="#FFFFFF"
+        android:layout_gravity="bottom|end"
+        />
+
+</FrameLayout>
