@@ -2,15 +2,16 @@ package com.nishiket.task
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
+import com.nishiket.task.drawable.DrawableActivity
 import com.nishiket.task.layouts.LayoutsActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var acitivity_task: Button
     private lateinit var layouts_task: Button
+    private lateinit var drawable_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,11 +24,16 @@ class MainActivity : AppCompatActivity() {
         layouts_task.setOnClickListener{ view->
             startActivity(layouts)
         }
+        val drawable: Intent = Intent(this, DrawableActivity::class.java)
+        drawable_task.setOnClickListener{ view->
+            startActivity(drawable)
+        }
     }
 
     fun findIds() {
         acitivity_task = findViewById(R.id.activity_task)
         layouts_task = findViewById(R.id.layout_task)
+        drawable_task = findViewById(R.id.drawable_task)
     }
 
 }
