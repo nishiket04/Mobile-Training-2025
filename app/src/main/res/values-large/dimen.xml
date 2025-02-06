@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="profile_pic">80sp</dimen>
+    <dimen name="heading">30sp</dimen>
+    <dimen name="image1_height">230dp</dimen>
+</resources>

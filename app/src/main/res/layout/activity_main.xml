@@ -27,5 +27,11 @@
         android:layout_height="wrap_content"
         android:text="Drawable and Selector Task"
         />
+    <Button
+        android:id="@+id/dimension_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dimension Task"
+        />
 
 </LinearLayout>
