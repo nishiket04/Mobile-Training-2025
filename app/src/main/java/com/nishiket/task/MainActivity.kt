@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
-import com.nishiket.task.layouts.LayoutsActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var acitivity_task: Button
@@ -18,10 +17,6 @@ class MainActivity : AppCompatActivity() {
         val activity: Intent = Intent(this, TaskOfActivity::class.java)
         acitivity_task.setOnClickListener{ view->
             startActivity(activity)
-        }
-        val layouts: Intent = Intent(this, LayoutsActivity::class.java)
-        layouts_task.setOnClickListener{ view->
-            startActivity(layouts)
         }
     }
 
