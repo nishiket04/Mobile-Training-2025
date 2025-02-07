@@ -16,6 +16,9 @@
             android:name=".dimension.DimensionActivity"
             android:exported="false" />
         <activity
+            android:name=".viewpager.ViewPagerActivity"
+            android:exported="false" />
+        <activity
             android:name=".drawable.DrawableActivity"
             android:exported="false" />
         <activity
