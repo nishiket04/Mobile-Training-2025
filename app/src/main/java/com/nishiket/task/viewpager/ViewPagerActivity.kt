@@ -2,6 +2,7 @@ package com.nishiket.task.viewpager
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -15,6 +16,7 @@ import com.nishiket.task.viewpager.horizontalfragments.NatureFragment
 class ViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_view_pager)
 
         // all images of evey category
