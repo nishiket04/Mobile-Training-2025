@@ -26,6 +26,7 @@ class AnimeFragment(private val animeWallpaper:List<Int>) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // setting up viewpager and giving offset
         view.findViewById<ViewPager2>(R.id.animeViewPager).adapter = VerticalViewPagerAdapter(parentFragmentManager,lifecycle,animeWallpaper)
         view.findViewById<ViewPager2>(R.id.animeViewPager).offscreenPageLimit = 2
     }
