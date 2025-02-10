@@ -25,6 +25,7 @@ class CarsFragment(private val carsWallpaper: List<Int>) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // setting up viewpager and giving offset
         view.findViewById<ViewPager2>(R.id.carsViewPager).adapter = VerticalViewPagerAdapter(parentFragmentManager,lifecycle,carsWallpaper)
         view.findViewById<ViewPager2>(R.id.carsViewPager).offscreenPageLimit = 2
     }

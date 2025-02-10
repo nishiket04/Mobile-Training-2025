@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.nishiket.task.R
 
+// common fragment for vertical image scroll
 class ImageFragment(private val image:Int) : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,7 @@ class ImageFragment(private val image:Int) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // set image with resource Id.
         view.findViewById<ImageView>(R.id.image).setImageResource(image)
     }
 

@@ -25,6 +25,7 @@ class NatureFragment(private val natureWallpaper:List<Int>) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // setting up viewpager and giving offset
         view.findViewById<ViewPager2>(R.id.natureViewPager).adapter = VerticalViewPagerAdapter(parentFragmentManager,lifecycle,natureWallpaper)
         view.findViewById<ViewPager2>(R.id.natureViewPager).offscreenPageLimit = 2
     }
