@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import com.nishiket.task.R
+import com.nishiket.task.viewpager.ViewPagerActivity
 import com.nishiket.task.viewpager.adapter.VerticalViewPagerAdapter
 
 class AnimeFragment(private val animeWallpaper:List<Int>) : Fragment() {
@@ -29,5 +31,22 @@ class AnimeFragment(private val animeWallpaper:List<Int>) : Fragment() {
         // setting up viewpager and giving offset
         view.findViewById<ViewPager2>(R.id.animeViewPager).adapter = VerticalViewPagerAdapter(parentFragmentManager,lifecycle,animeWallpaper)
         view.findViewById<ViewPager2>(R.id.animeViewPager).offscreenPageLimit = 2
+
+        // added same tab go to first image
+        val a = activity as? ViewPagerActivity
+        a?.tabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                view.findViewById<ViewPager2>(R.id.animeViewPager).currentItem=0
+            }
+
+        })
     }
 }
