@@ -14,6 +14,7 @@ import com.nishiket.task.viewpager.horizontalfragments.CarsFragment
 import com.nishiket.task.viewpager.horizontalfragments.NatureFragment
 
 class ViewPagerActivity : AppCompatActivity() {
+    lateinit var tabLayout: TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -56,9 +57,11 @@ class ViewPagerActivity : AppCompatActivity() {
         })
 
         // setting up tablayout with viewpager
-        val tabLayout: TabLayout = findViewById(R.id.tablayout)
+        tabLayout = findViewById(R.id.tablayout)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = category[position]
         }.attach()
+
+
     }
 }

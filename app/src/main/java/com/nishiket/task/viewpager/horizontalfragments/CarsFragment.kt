@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import com.nishiket.task.R
+import com.nishiket.task.viewpager.ViewPagerActivity
 import com.nishiket.task.viewpager.adapter.VerticalViewPagerAdapter
 
 class CarsFragment(private val carsWallpaper: List<Int>) : Fragment() {
@@ -28,6 +30,23 @@ class CarsFragment(private val carsWallpaper: List<Int>) : Fragment() {
         // setting up viewpager and giving offset
         view.findViewById<ViewPager2>(R.id.carsViewPager).adapter = VerticalViewPagerAdapter(parentFragmentManager,lifecycle,carsWallpaper)
         view.findViewById<ViewPager2>(R.id.carsViewPager).offscreenPageLimit = 2
+
+        // added same tab go to first image
+        val a = activity as? ViewPagerActivity
+        a?.tabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                view.findViewById<ViewPager2>(R.id.carsViewPager).currentItem=0
+            }
+
+        })
     }
 
 }
