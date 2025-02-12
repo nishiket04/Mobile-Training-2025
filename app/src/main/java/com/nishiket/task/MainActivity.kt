@@ -32,22 +32,12 @@ class MainActivity : AppCompatActivity() {
         drawable_task.setOnClickListener{ view->
             startActivity(drawable)
         }
-        val dimension: Intent = Intent(this, DimensionActivity::class.java)
-        dimension_task.setOnClickListener{ view->
-            startActivity(dimension)
-        }
-        val viewpager: Intent = Intent(this, ViewPagerActivity::class.java)
-        viewpager_task.setOnClickListener{ view->
-            startActivity(viewpager)
-        }
     }
 
     fun findIds() {
         acitivity_task = findViewById(R.id.activity_task)
         layouts_task = findViewById(R.id.layout_task)
         drawable_task = findViewById(R.id.drawable_task)
-        viewpager_task = findViewById(R.id.viewpager_task)
-        dimension_task = findViewById(R.id.dimension_task)
     }
 
 }
