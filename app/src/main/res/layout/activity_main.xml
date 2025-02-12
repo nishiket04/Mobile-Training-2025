@@ -39,5 +39,11 @@
         android:layout_height="wrap_content"
         android:text="ViewPager Task "
         />
+    <Button
+        android:id="@+id/appbar_toolbar_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AppBar and ToolBar Task"
+        />
 
 </LinearLayout>
