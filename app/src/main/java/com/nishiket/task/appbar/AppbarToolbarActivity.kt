@@ -2,6 +2,7 @@ package com.nishiket.task.appbar
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.NestedScrollView
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -27,6 +28,17 @@ class AppbarToolbarActivity : AppCompatActivity() {
                 bottomBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
             }
         })
+
+        // Hide like menuItem when clicked on search Item
+        (toolbar.menu.findItem(R.id.search).actionView as? SearchView)?.setOnSearchClickListener {
+            toolbar.menu.findItem(R.id.like).setVisible(false)
+        }
+
+        // get like menuItem when clicked on close search Item
+        (toolbar.menu.findItem(R.id.search).actionView as? SearchView)?.setOnCloseListener {
+            toolbar.menu.findItem(R.id.like).setVisible(true)
+            return@setOnCloseListener false
+        }
     }
 
     //Function to find all the ids of views
