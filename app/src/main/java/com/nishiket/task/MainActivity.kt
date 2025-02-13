@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
+import com.nishiket.task.appbar.AppbarToolbarActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
 import com.nishiket.task.fonts.FontsActivity
 import com.nishiket.task.layouts.LayoutsActivity
+import com.nishiket.task.snackbar_fab.SnackbarFabActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewpager_task: Button
     private lateinit var dimension_task: Button
     private lateinit var fonts_task: Button
+    private lateinit var appbar_toolbar_task: Button
+    private lateinit var snackbar_fab_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,9 +46,17 @@ class MainActivity : AppCompatActivity() {
         viewpager_task.setOnClickListener{ view->
             startActivity(viewPager)
         }
+        val appBar: Intent = Intent(this, AppbarToolbarActivity::class.java)
+        appbar_toolbar_task.setOnClickListener { view->
+            startActivity(appBar)
+        }
         val fonts: Intent = Intent(this, FontsActivity::class.java)
         fonts_task.setOnClickListener{ view->
             startActivity(fonts)
+        }
+        val snackBarFab: Intent = Intent(this, SnackbarFabActivity::class.java)
+        snackbar_fab_task.setOnClickListener{ view->
+            startActivity(snackBarFab)
         }
     }
 
@@ -55,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         viewpager_task = findViewById(R.id.viewpager_task)
         dimension_task = findViewById(R.id.dimension_task)
         fonts_task = findViewById(R.id.fonts_task)
+        appbar_toolbar_task = findViewById(R.id.appbar_toolbar_task)
+        snackbar_fab_task = findViewById(R.id.Snackbar_fab_task)
     }
 
 }
