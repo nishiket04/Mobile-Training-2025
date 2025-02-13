@@ -63,5 +63,11 @@
         android:layout_height="wrap_content"
         android:text="Dialog Task"
         />
+    <Button
+        android:id="@+id/fragment_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment Task"
+        />
 
 </LinearLayout>
