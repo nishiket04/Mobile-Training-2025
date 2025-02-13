@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Task"
         tools:targetApi="31">
         <activity
+            android:name=".appbar.AppbarToolbarActivity"
+            android:exported="false" />
+        <activity
             android:name=".dimension.DimensionActivity"
             android:exported="false" />
         <activity
