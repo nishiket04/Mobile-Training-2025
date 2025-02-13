@@ -1,16 +1,17 @@
 package com.nishiket.task.dialog
 
 import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.dialog.MaterialDialogs
 import com.nishiket.task.R
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class DialogActivity : AppCompatActivity() {
     private lateinit var alertDialog: Button
@@ -20,6 +21,8 @@ class DialogActivity : AppCompatActivity() {
     private lateinit var itemDialog: Button
     private lateinit var materialDialog: Button
     private lateinit var multiChoiceDialog: Button
+    private lateinit var dateDialog: Button
+    private val calendar:Calendar = Calendar.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,9 +60,14 @@ class DialogActivity : AppCompatActivity() {
             materialDialog()
         }
 
-        // custom view dialog box is complete
+        // custom view dialog box
         customDialog.setOnClickListener {
             customDialog()
+        }
+
+        // date dialog box
+        dateDialog.setOnClickListener {
+            dateDialog()
         }
     }
 
@@ -198,6 +206,23 @@ class DialogActivity : AppCompatActivity() {
         builder.create().show()
     }
 
+    //date dialog box function
+    fun dateDialog(){
+        val datePickerDialog = DatePickerDialog(
+            this, {DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year, monthOfYear, dayOfMonth)
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val formattedDate = dateFormat.format(selectedDate.time)
+                Toast.makeText(this,"selected date is $formattedDate",Toast.LENGTH_LONG).show()
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePickerDialog.show()
+    }
+
     // Function to find id's of view
     fun findId() {
         alertDialog = findViewById(R.id.alertDialog)
@@ -207,5 +232,6 @@ class DialogActivity : AppCompatActivity() {
         itemDialog = findViewById(R.id.itemDialog)
         materialDialog = findViewById(R.id.materialDialog)
         multiChoiceDialog = findViewById(R.id.multiChoiceDialog)
+        dateDialog = findViewById(R.id.dateDialog)
     }
 }
