@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(snackBarFab)
         }
         val dialog: Intent = Intent(this, DialogActivity::class.java)
-        dimension_task.setOnClickListener{ view->
+        dialog_task.setOnClickListener{ view->
             startActivity(dialog)
         }
     }
