@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
+import com.nishiket.task.dialog.DialogActivity
 import com.nishiket.task.appbar.AppbarToolbarActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawable_task: Button
     private lateinit var viewpager_task: Button
     private lateinit var dimension_task: Button
+    private lateinit var dialog_task: Button
     private lateinit var fonts_task: Button
     private lateinit var appbar_toolbar_task: Button
     private lateinit var snackbar_fab_task: Button
@@ -58,6 +60,10 @@ class MainActivity : AppCompatActivity() {
         snackbar_fab_task.setOnClickListener{ view->
             startActivity(snackBarFab)
         }
+        val dialog: Intent = Intent(this, DialogActivity::class.java)
+        dimension_task.setOnClickListener{ view->
+            startActivity(dialog)
+        }
     }
 
     fun findIds() {
@@ -69,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         fonts_task = findViewById(R.id.fonts_task)
         appbar_toolbar_task = findViewById(R.id.appbar_toolbar_task)
         snackbar_fab_task = findViewById(R.id.Snackbar_fab_task)
+        dialog_task = findViewById(R.id.dialog_task)
     }
 
 }
