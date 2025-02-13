@@ -40,10 +40,10 @@
         android:text="ViewPager Task "
         />
     <Button
-        android:id="@+id/Snackbar_fab_task"
+        android:id="@+id/fonts_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Snackbar Fab Task"
+        android:text="Fonts Task"
         />
 
 </LinearLayout>

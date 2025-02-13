@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Task"
         tools:targetApi="31">
         <activity
-            android:name=".snackbar_fab.SnackbarFabActivity"
+            android:name=".fonts.FontsActivity"
             android:exported="false" />
         <activity
             android:name=".dimension.DimensionActivity"
@@ -57,6 +57,10 @@
         <activity
             android:name=".activity.data_pass.Task2_Activity_Get_Data_From_Back_Stack"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
