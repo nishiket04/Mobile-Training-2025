@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
+import com.nishiket.task.fonts.FontsActivity
 import com.nishiket.task.layouts.LayoutsActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawable_task: Button
     private lateinit var viewpager_task: Button
     private lateinit var dimension_task: Button
+    private lateinit var fonts_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,6 +42,10 @@ class MainActivity : AppCompatActivity() {
         viewpager_task.setOnClickListener{ view->
             startActivity(viewPager)
         }
+        val fonts: Intent = Intent(this, FontsActivity::class.java)
+        fonts_task.setOnClickListener{ view->
+            startActivity(fonts)
+        }
     }
 
     fun findIds() {
@@ -48,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         drawable_task = findViewById(R.id.drawable_task)
         viewpager_task = findViewById(R.id.viewpager_task)
         dimension_task = findViewById(R.id.dimension_task)
+        fonts_task = findViewById(R.id.fonts_task)
     }
 
 }
