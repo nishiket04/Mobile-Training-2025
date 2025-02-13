@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
+import com.nishiket.task.dialog.DialogActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
 import com.nishiket.task.layouts.LayoutsActivity
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawable_task: Button
     private lateinit var viewpager_task: Button
     private lateinit var dimension_task: Button
+    private lateinit var dialog_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,6 +42,10 @@ class MainActivity : AppCompatActivity() {
         viewpager_task.setOnClickListener{ view->
             startActivity(viewPager)
         }
+        val dialog: Intent = Intent(this, DialogActivity::class.java)
+        dimension_task.setOnClickListener{ view->
+            startActivity(dialog)
+        }
     }
 
     fun findIds() {
@@ -48,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         drawable_task = findViewById(R.id.drawable_task)
         viewpager_task = findViewById(R.id.viewpager_task)
         dimension_task = findViewById(R.id.dimension_task)
+        dialog_task = findViewById(R.id.dialog_task)
     }
 
 }
