@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- color for toolbar Items icon to be black-->
+        <item name="colorControlNormal">@color/black</item>
     </style>
 </resources>
