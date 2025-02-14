@@ -33,7 +33,7 @@ class ModifyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // assigning Id's using function
         findId(view)
-
+        modifiableEditText.isFocusable = false
         // to get the sentence from display fragment
         parentFragmentManager.setFragmentResultListener(
             "fromDisplay",
@@ -50,7 +50,9 @@ class ModifyFragment : Fragment() {
             }
 
             enableEditImage.setOnClickListener {
-
+                modifiableEditText.isFocusable = true
+                modifiableEditText.isFocusableInTouchMode = true
+                modifiableEditText.requestFocus()
             }
             // modifying data
             modifyAndSendButton.setOnClickListener {
