@@ -28,6 +28,7 @@ class FragmentActivity : AppCompatActivity() {
         val tabTitleList: List<String> = listOf("Main", "Modify", "Display")
         // sets the adapter on viewpager view
         viewPagerScreen.adapter = ViewPagerScreenAdapter(supportFragmentManager,lifecycle,fragmentList)
+        viewPagerScreen.offscreenPageLimit = 1 // to load the fragments
         // set tab and viewpager on tab
         TabLayoutMediator(tabLayoutNavigator,viewPagerScreen){tab, position ->
             tab.text = tabTitleList[position]
