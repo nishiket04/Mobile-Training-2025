@@ -10,6 +10,7 @@ import com.nishiket.task.appbar.AppbarToolbarActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
 import com.nishiket.task.fonts.FontsActivity
+import com.nishiket.task.fragment.FragmentActivity
 import com.nishiket.task.layouts.LayoutsActivity
 import com.nishiket.task.snackbar_fab.SnackbarFabActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fonts_task: Button
     private lateinit var appbar_toolbar_task: Button
     private lateinit var snackbar_fab_task: Button
+    private lateinit var fragment_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -64,6 +66,10 @@ class MainActivity : AppCompatActivity() {
         dialog_task.setOnClickListener{ view->
             startActivity(dialog)
         }
+        val fragment: Intent = Intent(this, FragmentActivity::class.java)
+        fragment_task.setOnClickListener{ view->
+            startActivity(fragment)
+        }
     }
 
     fun findIds() {
@@ -76,6 +82,7 @@ class MainActivity : AppCompatActivity() {
         appbar_toolbar_task = findViewById(R.id.appbar_toolbar_task)
         snackbar_fab_task = findViewById(R.id.Snackbar_fab_task)
         dialog_task = findViewById(R.id.dialog_task)
+        fragment_task = findViewById(R.id.fragment_task)
     }
 
 }
