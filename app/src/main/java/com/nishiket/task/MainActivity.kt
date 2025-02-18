@@ -11,6 +11,7 @@ import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
 import com.nishiket.task.fonts.FontsActivity
 import com.nishiket.task.fragment.FragmentActivity
+import com.nishiket.task.intent.IntentActivity
 import com.nishiket.task.layouts.LayoutsActivity
 import com.nishiket.task.recyclerview.RecyclerViewActivity
 import com.nishiket.task.snackbar_fab.SnackbarFabActivity
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var snackbar_fab_task: Button
     private lateinit var fragment_task: Button
     private lateinit var recyclerview_task: Button
+    private lateinit var intent_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -76,6 +78,10 @@ class MainActivity : AppCompatActivity() {
         recyclerview_task.setOnClickListener{ view->
             startActivity(recyclerview)
         }
+        val intent: Intent = Intent(this, IntentActivity::class.java)
+        intent_task.setOnClickListener{ view->
+            startActivity(intent)
+        }
     }
 
     fun findIds() {
@@ -90,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         dialog_task = findViewById(R.id.dialog_task)
         fragment_task = findViewById(R.id.fragment_task)
         recyclerview_task = findViewById(R.id.recyclerview_task)
+        intent_task = findViewById(R.id.intent_task)
     }
 
 }

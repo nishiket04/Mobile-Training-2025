@@ -75,5 +75,11 @@
         android:layout_height="wrap_content"
         android:text="Recycler View Task"
         />
+    <Button
+        android:id="@+id/intent_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intent Task"
+        />
 
 </LinearLayout>
