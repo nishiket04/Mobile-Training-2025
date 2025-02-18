@@ -66,6 +66,7 @@ class RecyclerViewActivity : AppCompatActivity() {
                 val time = LocalTime.now().toString()
                 chatList.add(Message(message, time, receiver))
                 chatAdapter.notifyItemInserted(chatList.size - 1)
+                messagesRecyclerView.scrollToPosition(chatList.size-1)
                 messageEditText.text.clear()
                 msgTypeCheckBox.isChecked = false
             }
