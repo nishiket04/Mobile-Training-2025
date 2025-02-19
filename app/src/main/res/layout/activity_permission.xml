@@ -21,7 +21,6 @@
         android:id="@+id/camera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="nvkjdnvkjd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView16"
@@ -40,7 +39,6 @@
         android:id="@+id/location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="nvkjdnvkjd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/camera" />
@@ -49,7 +47,7 @@
         android:id="@+id/textView18"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Location"
+        android:text="Gallery"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -58,7 +56,6 @@
         android:id="@+id/gallery"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="nvkjdnvkjd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/location" />
