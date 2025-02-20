@@ -93,5 +93,11 @@
         android:layout_height="wrap_content"
         android:text="Shared Preferences Task"
         />
+    <Button
+        android:id="@+id/webview_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Web View Task"
+        />
 
 </LinearLayout>
