@@ -13,6 +13,7 @@ import com.nishiket.task.fonts.FontsActivity
 import com.nishiket.task.fragment.FragmentActivity
 import com.nishiket.task.intent.IntentActivity
 import com.nishiket.task.layouts.LayoutsActivity
+import com.nishiket.task.map.MapsActivity
 import com.nishiket.task.permission.PermissionActivity
 import com.nishiket.task.recyclerview.RecyclerViewActivity
 import com.nishiket.task.sharedpreferences.LoginActivity
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var permissions_task: Button
     private lateinit var sharedPreferences_task: Button
     private lateinit var webview_task: Button
+    private lateinit var map_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -100,6 +102,10 @@ class MainActivity : AppCompatActivity() {
         webview_task.setOnClickListener{ view->
             startActivity(webView)
         }
+        val map: Intent = Intent(this, MapsActivity::class.java)
+        map_task.setOnClickListener{ view->
+            startActivity(map)
+        }
     }
 
     fun findIds() {
@@ -118,6 +124,7 @@ class MainActivity : AppCompatActivity() {
         permissions_task = findViewById(R.id.permissions_task)
         sharedPreferences_task = findViewById(R.id.sharedPreferences_task)
         webview_task = findViewById(R.id.webview_task)
+        map_task = findViewById(R.id.map_task)
     }
 
 }
