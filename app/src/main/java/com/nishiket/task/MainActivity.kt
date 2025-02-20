@@ -18,6 +18,7 @@ import com.nishiket.task.recyclerview.RecyclerViewActivity
 import com.nishiket.task.sharedpreferences.LoginActivity
 import com.nishiket.task.snackbar_fab.SnackbarFabActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
+import com.nishiket.task.webview.WebViewActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var acitivity_task: Button
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var intent_task: Button
     private lateinit var permissions_task: Button
     private lateinit var sharedPreferences_task: Button
+    private lateinit var webview_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -94,6 +96,10 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences_task.setOnClickListener{ view->
             startActivity(sharedpreferences)
         }
+        val webView: Intent = Intent(this, WebViewActivity::class.java)
+        webview_task.setOnClickListener{ view->
+            startActivity(webView)
+        }
     }
 
     fun findIds() {
@@ -111,6 +117,7 @@ class MainActivity : AppCompatActivity() {
         intent_task = findViewById(R.id.intent_task)
         permissions_task = findViewById(R.id.permissions_task)
         sharedPreferences_task = findViewById(R.id.sharedPreferences_task)
+        webview_task = findViewById(R.id.webview_task)
     }
 
 }
