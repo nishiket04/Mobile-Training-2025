@@ -50,7 +50,10 @@ class RetofitActivity : AppCompatActivity() {
                     progress.visibility = View.GONE
                     userRecylerView.visibility = View.VISIBLE
                     userRecylerView.layoutManager = LinearLayoutManager(this@RetofitActivity,LinearLayoutManager.VERTICAL,false)
+                    return
                 }
+                progress.visibility = View.GONE
+                Toast.makeText(this@RetofitActivity,"Something Went Wrong",Toast.LENGTH_LONG).show()
             }
             override fun onFailure(p0: Call<List<Users>>, p1: Throwable) {
                 progress.visibility = View.GONE
