@@ -16,6 +16,7 @@ import retrofit2.Response
 
 class RetofitActivity : AppCompatActivity() {
     private lateinit var retrofitInterface:Retrofit
+    private lateinit var retrofitInterfacePost:Retrofit
     private lateinit var userRecylerView: RecyclerView
     private lateinit var progress: ProgressBar
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,7 @@ class RetofitActivity : AppCompatActivity() {
         findId()
         // creating Retrofit Reference
         retrofitInterface = RetrofitInstance.getInstance().create(Retrofit::class.java)
+        retrofitInterfacePost = RetrofitInstance.getInstancePost().create(Retrofit::class.java)
         progress.visibility = View.VISIBLE
         userRecylerView.visibility = View.GONE
         // calling this method to get Users details
@@ -58,6 +60,23 @@ class RetofitActivity : AppCompatActivity() {
             override fun onFailure(p0: Call<List<Users>>, p1: Throwable) {
                 progress.visibility = View.GONE
                 Toast.makeText(this@RetofitActivity,"Something Went Wrong",Toast.LENGTH_LONG).show()
+            }
+
+        })
+        val send = retrofitInterfacePost.authUser(UserPassword())
+        send.enqueue(object : Callback<Success>{
+            override fun onResponse(p0: Call<Success>, p1: Response<Success>) {
+                Log.d("TAG", "onResponse: ${p1.body()}")
+                if(p1.isSuccessful && p1.code()==200){
+                    Toast.makeText(this@RetofitActivity,"Success",Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(this@RetofitActivity,"Username and password are wrong",Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(p0: Call<Success>, p1: Throwable) {
+                Log.d("TAG", "onResponse: ${p1}")
+                Toast.makeText(this@RetofitActivity,"Went Wrong",Toast.LENGTH_LONG).show()
             }
 
         })
