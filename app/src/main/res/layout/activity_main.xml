@@ -113,6 +113,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Retrofit Task" />
+        <Button
+            android:id="@+id/service_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service Task" />
 
     </LinearLayout>
 </ScrollView>
