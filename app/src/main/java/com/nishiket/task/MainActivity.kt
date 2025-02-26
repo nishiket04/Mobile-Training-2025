@@ -17,6 +17,7 @@ import com.nishiket.task.map.MapsActivity
 import com.nishiket.task.permission.PermissionActivity
 import com.nishiket.task.recyclerview.RecyclerViewActivity
 import com.nishiket.task.retrofit.RetofitActivity
+import com.nishiket.task.service.ServiceActivity
 import com.nishiket.task.sharedpreferences.LoginActivity
 import com.nishiket.task.snackbar_fab.SnackbarFabActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var webview_task: Button
     private lateinit var map_task: Button
     private lateinit var retrofit_task: Button
+    private lateinit var service_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -112,6 +114,10 @@ class MainActivity : AppCompatActivity() {
         retrofit_task.setOnClickListener{ view->
             startActivity(retrofit)
         }
+        val service: Intent = Intent(this, ServiceActivity::class.java)
+        service_task.setOnClickListener{ view->
+            startActivity(service)
+        }
     }
 
     fun findIds() {
@@ -132,6 +138,7 @@ class MainActivity : AppCompatActivity() {
         webview_task = findViewById(R.id.webview_task)
         map_task = findViewById(R.id.map_task)
         retrofit_task = findViewById(R.id.retrofit_task)
+        service_task = findViewById(R.id.service_task)
     }
 
 }
