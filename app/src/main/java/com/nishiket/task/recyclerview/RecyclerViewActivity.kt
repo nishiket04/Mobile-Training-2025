@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nishiket.task.R
 import com.nishiket.task.recyclerview.adapter.ChatAdapter
 import com.nishiket.task.recyclerview.model.Message
+import com.nishiket.task.recyclerview.roomdatabase.DatabaseInstance
 import java.time.LocalTime
 
 class RecyclerViewActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class RecyclerViewActivity : AppCompatActivity() {
     private lateinit var sendFAB: FloatingActionButton
     private lateinit var chatAdapter: ChatAdapter
     private val chatList: MutableList<Message> = mutableListOf()
+    private lateinit var db:DatabaseInstance
     private var edit: Boolean = false // message is selected for edit boolean
     private var itemPosition: Int = -1 // popup menu selected item position
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,10 @@ class RecyclerViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_recycler_view)
         // assigning id's using function
         findId()
+        // Get the Database instance
+        db = DatabaseInstance.getDatabase(this)
+        // add all the message to the list
+        chatList.addAll(db.chatDao().getChats())
         // To fit ime in screen with editText
         getWindow().setSoftInputMode(
             WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
@@ -56,6 +62,8 @@ class RecyclerViewActivity : AppCompatActivity() {
                 chatList[itemPosition].message = message
                 chatList[itemPosition].msgType = receiver
                 chatList[itemPosition].time = time
+                val v = db.chatDao().updateChat(chatList[itemPosition]) // update row in the table
+                Log.d("TAG", "onCreate: $v")
                 chatAdapter.notifyItemChanged(itemPosition)
                 messageEditText.text.clear()
                 msgTypeCheckBox.isChecked = false
@@ -64,7 +72,8 @@ class RecyclerViewActivity : AppCompatActivity() {
                 val message = messageEditText.text.toString().trim()
                 val receiver = msgTypeCheckBox.isChecked
                 val time = LocalTime.now().toString()
-                chatList.add(Message(message, time, receiver))
+                val id = db.chatDao().insertChat(Message(message=message, time = time, msgType = receiver)) // insert message into table
+                chatList.add(Message(id = id.toInt(),message=message, time = time, msgType =  receiver)) // add message to the list with id
                 chatAdapter.notifyItemInserted(chatList.size - 1)
                 messagesRecyclerView.scrollToPosition(chatList.size-1)
                 messageEditText.text.clear()
@@ -89,7 +98,9 @@ class RecyclerViewActivity : AppCompatActivity() {
             override fun onMenuItemClick(item: MenuItem?): Boolean {
                 when (item?.itemId) {
                     R.id.delete -> {
+                        val v = db.chatDao().deleteChat(chatList[position]) // delete the message form the table
                         chatList.removeAt(position)
+                        Log.d("TAG", "onCreate: $v")
                         chatAdapter.notifyItemRemoved(position)
                         chatAdapter.notifyItemRangeChanged(0, chatList.size - 1)
                         return true

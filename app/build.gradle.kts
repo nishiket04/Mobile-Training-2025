@@ -2,8 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
+    id("kotlin-kapt")
 }
-
+val room_version = "2.6.1"
 android {
     namespace = "com.nishiket.task"
     compileSdk = 35
@@ -47,7 +48,9 @@ dependencies {
     implementation(libs.play.services.location)
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("androidx.room:room-runtime:$room_version")
     testImplementation(libs.junit)
+    kapt("androidx.room:room-compiler:2.5.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
