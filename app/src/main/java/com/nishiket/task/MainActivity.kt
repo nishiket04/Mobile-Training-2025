@@ -14,6 +14,7 @@ import com.nishiket.task.fragment.FragmentActivity
 import com.nishiket.task.intent.IntentActivity
 import com.nishiket.task.layouts.LayoutsActivity
 import com.nishiket.task.map.MapsActivity
+import com.nishiket.task.notification.NotificationActivity
 import com.nishiket.task.permission.PermissionActivity
 import com.nishiket.task.recyclerview.RecyclerViewActivity
 import com.nishiket.task.retrofit.RetofitActivity
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var map_task: Button
     private lateinit var retrofit_task: Button
     private lateinit var service_task: Button
+    private lateinit var notification_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -118,6 +120,10 @@ class MainActivity : AppCompatActivity() {
         service_task.setOnClickListener{ view->
             startActivity(service)
         }
+        val notification: Intent = Intent(this, NotificationActivity::class.java)
+        notification_task.setOnClickListener{ view->
+            startActivity(notification)
+        }
     }
 
     fun findIds() {
@@ -139,6 +145,7 @@ class MainActivity : AppCompatActivity() {
         map_task = findViewById(R.id.map_task)
         retrofit_task = findViewById(R.id.retrofit_task)
         service_task = findViewById(R.id.service_task)
+        notification_task = findViewById(R.id.notification_task)
     }
 
 }

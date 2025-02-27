@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
     id("kotlin-kapt")
+    alias(libs.plugins.google.gms.google.services)
 }
 val room_version = "2.6.1"
 android {
@@ -49,6 +50,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.room:room-runtime:$room_version")
+    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     kapt("androidx.room:room-compiler:2.5.0")
     androidTestImplementation(libs.androidx.junit)
