@@ -21,6 +21,7 @@ import com.nishiket.task.retrofit.RetofitActivity
 import com.nishiket.task.service.ServiceActivity
 import com.nishiket.task.sharedpreferences.LoginActivity
 import com.nishiket.task.snackbar_fab.SnackbarFabActivity
+import com.nishiket.task.thread.ThreadActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
 import com.nishiket.task.webview.WebViewActivity
 
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var retrofit_task: Button
     private lateinit var service_task: Button
     private lateinit var notification_task: Button
+    private lateinit var thread_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -124,6 +126,10 @@ class MainActivity : AppCompatActivity() {
         notification_task.setOnClickListener{ view->
             startActivity(notification)
         }
+        val thread: Intent = Intent(this, ThreadActivity::class.java)
+        thread_task.setOnClickListener{ view->
+            startActivity(thread)
+        }
     }
 
     fun findIds() {
@@ -146,6 +152,7 @@ class MainActivity : AppCompatActivity() {
         retrofit_task = findViewById(R.id.retrofit_task)
         service_task = findViewById(R.id.service_task)
         notification_task = findViewById(R.id.notification_task)
+        thread_task = findViewById(R.id.thread_task)
     }
 
 }

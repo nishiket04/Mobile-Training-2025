@@ -52,6 +52,7 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     kapt("androidx.room:room-compiler:2.5.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
