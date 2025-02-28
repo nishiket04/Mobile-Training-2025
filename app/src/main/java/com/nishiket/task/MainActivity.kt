@@ -24,6 +24,7 @@ import com.nishiket.task.snackbar_fab.SnackbarFabActivity
 import com.nishiket.task.thread.ThreadActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
 import com.nishiket.task.webview.WebViewActivity
+import com.nishiket.task.workmanager.WorkManagerActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var acitivity_task: Button
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var service_task: Button
     private lateinit var notification_task: Button
     private lateinit var thread_task: Button
+    private lateinit var workmanager_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -130,6 +132,10 @@ class MainActivity : AppCompatActivity() {
         thread_task.setOnClickListener{ view->
             startActivity(thread)
         }
+        val workManager: Intent = Intent(this, WorkManagerActivity::class.java)
+        workmanager_task.setOnClickListener{ view->
+            startActivity(workManager)
+        }
     }
 
     fun findIds() {
@@ -153,6 +159,7 @@ class MainActivity : AppCompatActivity() {
         service_task = findViewById(R.id.service_task)
         notification_task = findViewById(R.id.notification_task)
         thread_task = findViewById(R.id.thread_task)
+        workmanager_task = findViewById(R.id.workmanager_task)
     }
 
 }

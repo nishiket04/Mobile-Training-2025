@@ -128,6 +128,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thread Task" />
+        <Button
+            android:id="@+id/workmanager_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WorkManager Task" />
 
     </LinearLayout>
 </ScrollView>
