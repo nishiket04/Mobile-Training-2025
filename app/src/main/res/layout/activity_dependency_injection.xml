@@ -7,4 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".di.DependencyInjectionActivity">
 
+    <Button
+        android:id="@+id/basicHilt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Basic Hilt Injection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/constraintHilt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hilt with Constraints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basicHilt" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintHilt" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
