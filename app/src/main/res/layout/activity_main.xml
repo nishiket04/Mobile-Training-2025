@@ -133,6 +133,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="WorkManager Task" />
+        <Button
+            android:id="@+id/di_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dependency Injection Task" />
 
     </LinearLayout>
 </ScrollView>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
 import com.nishiket.task.dialog.DialogActivity
 import com.nishiket.task.appbar.AppbarToolbarActivity
+import com.nishiket.task.di.DependencyInjectionActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
 import com.nishiket.task.fonts.FontsActivity
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var notification_task: Button
     private lateinit var thread_task: Button
     private lateinit var workmanager_task: Button
+    private lateinit var di_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -136,6 +138,10 @@ class MainActivity : AppCompatActivity() {
         workmanager_task.setOnClickListener{ view->
             startActivity(workManager)
         }
+        val dI: Intent = Intent(this, DependencyInjectionActivity::class.java)
+        di_task.setOnClickListener{ view->
+            startActivity(dI)
+        }
     }
 
     fun findIds() {
@@ -160,6 +166,7 @@ class MainActivity : AppCompatActivity() {
         notification_task = findViewById(R.id.notification_task)
         thread_task = findViewById(R.id.thread_task)
         workmanager_task = findViewById(R.id.workmanager_task)
+        di_task = findViewById(R.id.di_task)
     }
 
 }
