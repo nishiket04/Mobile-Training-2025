@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
     id("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
+    id("com.google.dagger.hilt.android")
 }
 val room_version = "2.6.1"
 android {
@@ -38,6 +39,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -57,4 +62,6 @@ dependencies {
     kapt("androidx.room:room-compiler:2.5.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 }
