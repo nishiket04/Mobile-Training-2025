@@ -24,6 +24,7 @@ import com.nishiket.task.sharedpreferences.LoginActivity
 import com.nishiket.task.snackbar_fab.SnackbarFabActivity
 import com.nishiket.task.theame_glide.ThemeAndImageActivity
 import com.nishiket.task.thread.ThreadActivity
+import com.nishiket.task.viewmodel_livedata.ViewModelActivity
 import com.nishiket.task.viewpager.ViewPagerActivity
 import com.nishiket.task.webview.WebViewActivity
 import com.nishiket.task.workmanager.WorkManagerActivity
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var workmanager_task: Button
     private lateinit var di_task: Button
     private lateinit var theamAndGlide_task: Button
+    private lateinit var viewModel_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -148,6 +150,10 @@ class MainActivity : AppCompatActivity() {
         theamAndGlide_task.setOnClickListener{ view->
             startActivity(themeAndImage)
         }
+        val viewModel: Intent = Intent(this, ViewModelActivity::class.java)
+        viewModel_task.setOnClickListener{ view->
+            startActivity(viewModel)
+        }
     }
 
     fun findIds() {
@@ -174,6 +180,7 @@ class MainActivity : AppCompatActivity() {
         workmanager_task = findViewById(R.id.workmanager_task)
         di_task = findViewById(R.id.di_task)
         theamAndGlide_task = findViewById(R.id.theamAndGlide_task)
+        viewModel_task = findViewById(R.id.viewModel_task)
     }
 
 }
