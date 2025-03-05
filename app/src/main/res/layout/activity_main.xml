@@ -148,6 +148,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="View Model Task" />
+        <Button
+            android:id="@+id/brodcast_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BrodCast Task" />
 
     </LinearLayout>
 </ScrollView>

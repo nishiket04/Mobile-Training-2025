@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nishiket.task.activity.TaskOfActivity
 import com.nishiket.task.dialog.DialogActivity
 import com.nishiket.task.appbar.AppbarToolbarActivity
+import com.nishiket.task.brodcast.BrodcastActivity
 import com.nishiket.task.di.DependencyInjectionActivity
 import com.nishiket.task.dimension.DimensionActivity
 import com.nishiket.task.drawable.DrawableActivity
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var di_task: Button
     private lateinit var theamAndGlide_task: Button
     private lateinit var viewModel_task: Button
+    private lateinit var brodcast_task: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -154,6 +156,10 @@ class MainActivity : AppCompatActivity() {
         viewModel_task.setOnClickListener{ view->
             startActivity(viewModel)
         }
+        val brodcast: Intent = Intent(this, BrodcastActivity::class.java)
+        brodcast_task.setOnClickListener{ view->
+            startActivity(brodcast)
+        }
     }
 
     fun findIds() {
@@ -181,6 +187,7 @@ class MainActivity : AppCompatActivity() {
         di_task = findViewById(R.id.di_task)
         theamAndGlide_task = findViewById(R.id.theamAndGlide_task)
         viewModel_task = findViewById(R.id.viewModel_task)
+        brodcast_task = findViewById(R.id.brodcast_task)
     }
 
 }
