@@ -29,6 +29,9 @@
         android:theme="@style/Theme.Task"
         tools:targetApi="31">
         <activity
+            android:name=".viewmodel_livedata.ViewModelActivity"
+            android:exported="false" />
+        <activity
             android:name=".theame_glide.ThemeAndImageActivity"
             android:exported="false" />
         <activity
